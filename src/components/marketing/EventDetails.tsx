@@ -4,6 +4,7 @@ import { Section } from '@/components/ui/Section';
 type EventDetail = {
   title: string;
   body: string;
+  meta: string;
 };
 
 type EventDetailsProps = {
@@ -15,13 +16,13 @@ export function EventDetails({ details }: EventDetailsProps) {
     <Section
       id="details"
       eyebrow="El gran dia"
-      title="Detalles base del evento"
-      description="Esta seccion centraliza los datos que luego compartiran landing publica e invitacion personalizada."
+      title="El ritmo del dia, explicado sin saturar"
+      description="La landing publica presenta solo la informacion suficiente para ubicar el evento y mantener una lectura ligera."
     >
       <div className="grid gap-6 md:grid-cols-3">
         {details.map((detail) => (
           <Card key={detail.title}>
-            <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-gold)]">Detalle</p>
+            <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-gold)]">{detail.meta}</p>
             <h3 className="mt-4 font-[family-name:var(--font-heading)] text-3xl text-[var(--color-ink)]">
               {detail.title}
             </h3>

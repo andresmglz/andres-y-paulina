@@ -1,6 +1,9 @@
+import { Footer } from '@/components/marketing/Footer';
+import { Gallery } from '@/components/marketing/Gallery';
 import { EventDetails } from '@/components/marketing/EventDetails';
 import { Gifts } from '@/components/marketing/Gifts';
 import { Hero } from '@/components/marketing/Hero';
+import { InvitationFlow } from '@/components/marketing/InvitationFlow';
 import { Story } from '@/components/marketing/Story';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
@@ -22,7 +25,15 @@ export default function LookbookPage() {
         </div>
       </section>
 
-      <Hero eyebrow="Lookbook" subtitle="Sistema base" ctaLabel="Confirmar asistencia" ctaHref="#primitives" />
+      <Hero
+        eyebrow="Lookbook"
+        title="Sistema base"
+        intro="Revision interna de la landing publica despues del paso de fundaciones y del aterrizaje editorial."
+        primaryCtaLabel="Ir a primitives"
+        primaryCtaHref="#primitives"
+        secondaryCtaLabel="Ver detalles"
+        secondaryCtaHref="#primitives"
+      />
 
       <Section
         id="primitives"
@@ -58,7 +69,10 @@ export default function LookbookPage() {
 
       <Story stories={eventContent.story.slice(0, 2)} />
       <EventDetails details={eventContent.details} />
+      <Gallery items={eventContent.gallery.slice(0, 2)} />
+      <InvitationFlow />
       <Gifts gifts={eventContent.gifts} />
+      <Footer />
     </main>
   );
 }

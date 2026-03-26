@@ -1,4 +1,4 @@
 export const siteConfig = {
   name: 'Andres & Paulina',
-  description: 'Base editorial para la pagina de boda y la experiencia de invitacion.',
+  description: 'Landing publica editorial para compartir la boda y preparar la futura invitacion personalizada.',
 } as const;
