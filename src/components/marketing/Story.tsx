@@ -14,12 +14,12 @@ export function Story({ stories }: StoryProps) {
   return (
     <Section
       eyebrow="Nuestra historia"
-      title="Una base para contar la boda con calma y claridad"
-      description="Estas tarjetas sirven como plantilla para la narrativa editorial de la landing."
+      title="Una pagina publica que se lee como una carta abierta"
+      description="Cada bloque existe para preparar el tono del evento sin convertir la landing en un formulario ni en una pagina tecnica."
     >
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-3">
         {stories.map((story) => (
-          <Card className="min-h-52" key={story.title}>
+          <Card className="min-h-60" key={story.title}>
             <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-gold)]">Momento</p>
             <h3 className="mt-4 font-[family-name:var(--font-heading)] text-3xl text-[var(--color-ink)]">
               {story.title}
