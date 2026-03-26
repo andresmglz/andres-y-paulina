@@ -6,25 +6,25 @@
 - Reemplazar el smoke test de ejemplo de Playwright por pruebas contra la app local real.
 
 ## Estructura inicial
-- `app/`
+- `src/app/`
   - `layout.tsx`
   - `page.tsx`
   - `lookbook/page.tsx`
   - `globals.css`
-- `components/ui/`
+- `src/components/ui/`
   - `Button.tsx`
   - `Card.tsx`
   - `Section.tsx`
   - `Stack.tsx`
-- `components/marketing/`
+- `src/components/marketing/`
   - `Hero.tsx`
   - `Story.tsx`
   - `EventDetails.tsx`
   - `Gifts.tsx`
   - `Footer.tsx`
-- `lib/content/`
+- `src/lib/content/`
   - `wedding-content.ts`
-- `lib/config/`
+- `src/lib/config/`
   - `site.ts`
   - `event.ts`
 - `supabase/`
