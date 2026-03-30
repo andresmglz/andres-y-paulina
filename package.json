@@ -1,0 +1,36 @@
+{
+  "name": "andres-y-paulina",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test:e2e": "playwright test",
+    "design:snapshot": "node scripts/capture-page.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andresmglz/andres-y-paulina.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andresmglz/andres-y-paulina/issues"
+  },
+  "homepage": "https://github.com/andresmglz/andres-y-paulina#readme",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "next": "^16.2.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2"
+  }
+}

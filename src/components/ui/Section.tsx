@@ -1,0 +1,53 @@
+import { clsx } from 'clsx';
+
+type SectionProps = {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  children: React.ReactNode;
+  className?: string;
+  surface?: 'stage' | 'plain';
+  viewportClassName?: string;
+  innerClassName?: string;
+  headerClassName?: string;
+};
+
+export function Section({
+  id,
+  eyebrow,
+  title,
+  description,
+  children,
+  className,
+  surface = 'stage',
+  viewportClassName,
+  innerClassName,
+  headerClassName,
+}: SectionProps) {
+  return (
+    <section className={clsx('px-6 py-6 md:px-10 md:py-8', className)} id={id}>
+      <div className={clsx('mx-auto max-w-6xl', viewportClassName)}>
+        <div
+          className={clsx(
+            surface === 'stage' ? 'section-stage rounded-[2.75rem] px-6 py-10 md:px-10 md:py-12' : 'w-full',
+            innerClassName,
+          )}
+        >
+          {(eyebrow || title || description) && (
+            <div className={clsx('mb-12 max-w-3xl text-center', headerClassName)}>
+            {eyebrow && <p className="section-label text-[var(--terracotta-dark)]">{eyebrow}</p>}
+            {title && (
+              <h2 className="mt-4 text-[var(--text-primary)]">
+                {title}
+              </h2>
+            )}
+            {description && <p className="mt-5 text-base text-[var(--text-secondary)]">{description}</p>}
+            </div>
+          )}
+          {children}
+        </div>
+      </div>
+    </section>
+  );
+}
