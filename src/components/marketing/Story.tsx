@@ -1,5 +1,7 @@
-import { Card } from '@/components/ui/Card';
+import Image from 'next/image';
+
 import { Section } from '@/components/ui/Section';
+import { eventContent } from '@/lib/content/wedding-content';
 
 type StoryItem = {
   title: string;
@@ -7,26 +9,54 @@ type StoryItem = {
 };
 
 type StoryProps = {
-  stories: ReadonlyArray<StoryItem>;
+  eyebrow?: string;
+  title?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  stories?: ReadonlyArray<StoryItem>;
 };
 
-export function Story({ stories }: StoryProps) {
+export function Story({
+  eyebrow = eventContent.story.eyebrow,
+  title = eventContent.story.title,
+  imageSrc = eventContent.story.image.src,
+  imageAlt = eventContent.story.image.alt,
+  stories = eventContent.story.moments,
+}: StoryProps) {
   return (
     <Section
-      eyebrow="Nuestra historia"
-      title="Una pagina publica que se lee como una carta abierta"
-      description="Cada bloque existe para preparar el tono del evento sin convertir la landing en un formulario ni en una pagina tecnica."
+      className="pt-6"
+      eyebrow={eyebrow}
+      id="story"
+      title={title}
     >
-      <div className="grid gap-6 md:grid-cols-3">
-        {stories.map((story) => (
-          <Card className="min-h-60" key={story.title}>
-            <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-gold)]">Momento</p>
-            <h3 className="mt-4 font-[family-name:var(--font-heading)] text-3xl text-[var(--color-ink)]">
-              {story.title}
-            </h3>
-            <p className="mt-4 text-base leading-7 text-[var(--color-muted)]">{story.description}</p>
-          </Card>
-        ))}
+      <div className="story-section grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+        <div className="relative min-h-[32rem] overflow-hidden rounded-[2.5rem] border border-[var(--color-line)] shadow-[var(--shadow-soft)]">
+          <Image
+            alt={imageAlt}
+            className="object-cover"
+            fill
+            sizes="(min-width: 1024px) 38vw, 100vw"
+            src={imageSrc}
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(32,24,21,0.02),rgba(32,24,21,0.28))]" />
+        </div>
+        <div className="grid gap-8">
+          {stories.map((story, index) => (
+            <div
+              className="border-b border-[rgba(198,93,59,0.12)] pb-8 last:border-b-0 last:pb-0 even:md:ml-10"
+              key={story.title}
+            >
+              <p className="section-label">
+                Momento {index + 1}
+              </p>
+              <h3 className="mt-3 text-[2rem] text-[var(--text-primary)]">
+                {story.title}
+              </h3>
+              <p className="mt-4 max-w-xl text-base text-[var(--text-secondary)]">{story.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </Section>
   );

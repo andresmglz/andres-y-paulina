@@ -1,41 +1,65 @@
+import Image from 'next/image';
+
 import { Card } from '@/components/ui/Card';
 import { Section } from '@/components/ui/Section';
-import { clsx } from 'clsx';
+import { eventContent } from '@/lib/content/wedding-content';
 
 type GalleryItem = {
+  src: string;
+  alt: string;
   title: string;
   description: string;
-  tone: 'warm' | 'paper' | 'accent' | 'moss';
 };
 
 type GalleryProps = {
-  items: ReadonlyArray<GalleryItem>;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  items?: ReadonlyArray<GalleryItem>;
 };
 
-const toneClassMap: Record<GalleryItem['tone'], string> = {
-  warm: 'bg-[linear-gradient(160deg,rgba(215,179,159,0.65),rgba(255,250,244,0.92))]',
-  paper: 'bg-[linear-gradient(160deg,rgba(255,252,247,0.98),rgba(232,219,204,0.94))]',
-  accent: 'bg-[linear-gradient(160deg,rgba(185,144,88,0.45),rgba(255,248,239,0.96))]',
-  moss: 'bg-[linear-gradient(160deg,rgba(81,96,77,0.55),rgba(247,242,235,0.94))]',
-};
+export function Gallery({
+  eyebrow = eventContent.gallery.eyebrow,
+  title = eventContent.gallery.title,
+  description = eventContent.gallery.description,
+  items = eventContent.gallery.items,
+}: GalleryProps) {
+  const sizeClassMap = [
+    'h-[30rem]',
+    'h-[18rem]',
+    'h-[24rem]',
+    'h-[20rem]',
+  ] as const;
 
-export function Gallery({ items }: GalleryProps) {
   return (
     <Section
-      eyebrow="Momentos"
-      title="Una galeria ligera mientras llegan las imagenes finales"
-      description="Por ahora esta seccion funciona como placeholder editorial para ritmo y atmosfera, sin depender de multimedia definitiva."
+      eyebrow={eyebrow}
+      title={title}
+      description={description}
     >
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="gallery md:columns-2 md:gap-5">
         {items.map((item, index) => (
-          <Card className="overflow-hidden p-0" key={item.title}>
-            <div className={clsx('min-h-64 p-6 md:p-8', toneClassMap[item.tone], index % 3 === 0 && 'md:min-h-80')}>
-              <div className="flex h-full flex-col justify-end rounded-[1.5rem] border border-white/35 bg-white/25 p-5 backdrop-blur-sm">
-                <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-muted)]">Atmósfera</p>
-                <h3 className="mt-3 font-[family-name:var(--font-heading)] text-3xl text-[var(--color-ink)]">
+          <Card
+            className="gallery-item image-card group mb-5 overflow-hidden border-none p-0 shadow-[0_18px_45px_rgba(61,36,28,0.1)] break-inside-avoid"
+            key={item.title}
+          >
+            <div className={`relative ${sizeClassMap[index % sizeClassMap.length]}`}>
+              <Image
+                alt={item.alt}
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                fill
+                sizes="(min-width: 768px) 46vw, 100vw"
+                src={item.src}
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,14,13,0.02),rgba(18,14,13,0.12)_30%,rgba(0,0,0,0.72))]" />
+              <div className="overlay absolute inset-x-4 bottom-4 rounded-[18px] border border-white/14 bg-[rgba(0,0,0,0.28)] p-4 backdrop-blur-[10px]">
+                <p className="text-[11px] uppercase tracking-[0.32em] text-white/65">Atmosfera</p>
+                <h3 className="mt-2 text-[1.8rem] leading-tight text-white [text-shadow:0_8px_24px_rgba(0,0,0,0.45)]">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-base leading-7 text-[var(--color-muted)]">{item.description}</p>
+                {index === 0 ? (
+                  <p className="mt-2 max-w-md text-sm leading-6 text-white/84">{item.description}</p>
+                ) : null}
               </div>
             </div>
           </Card>

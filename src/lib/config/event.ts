@@ -1,6 +1,8 @@
+import { weddingDetails } from '@/lib/content/wedding-details';
+
 export const eventConfig = {
-  dateLabel: '15 de abril de 2026',
-  ceremonyTime: '12:00 PM',
-  receptionTime: '2:30 PM',
-  cityLabel: 'Zapopan, Jalisco',
+  dateLabel: weddingDetails.event.dateLabel,
+  ceremonyTime: weddingDetails.event.ceremonyTime,
+  receptionTime: weddingDetails.event.receptionTime,
+  cityLabel: weddingDetails.event.cityLabel,
 } as const;
