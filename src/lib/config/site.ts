@@ -1,4 +1,7 @@
+import { weddingDetails } from '@/lib/content/wedding-details';
+
 export const siteConfig = {
-  name: 'Andres & Paulina',
-  description: 'Landing publica editorial para compartir la boda y preparar la futura invitacion personalizada.',
+  name: weddingDetails.couple.displayName,
+  description:
+    'Landing pública editorial para compartir la boda y preparar la futura invitación personalizada.',
 } as const;
