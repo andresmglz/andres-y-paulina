@@ -29,34 +29,34 @@ export function Verse({
           <div className="relative grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div className="relative order-2 lg:order-none">
               <div className="max-w-[38rem] px-2 py-4 md:px-6">
-                <p className="section-label text-[rgba(136,159,176,0.92)]">{eyebrow}</p>
+                <p className="section-label text-[rgba(114,142,165,0.96)]">{eyebrow}</p>
 
                 <div className="mt-4 flex items-center gap-3">
-                  <span className="h-px w-14 bg-[rgba(136,159,176,0.34)]" />
-                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-terracotta)]" />
-                  <span className="h-px w-10 bg-[rgba(216,195,168,0.24)]" />
+                  <span className="h-px w-14 bg-[rgba(114,142,165,0.38)]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-terracotta-soft)]" />
+                  <span className="h-px w-10 bg-[rgba(190,75,3,0.18)]" />
                 </div>
 
                 <blockquote
-                  className="mt-10 font-[family-name:var(--font-heading)] text-[clamp(2.55rem,4.4vw,4.6rem)] leading-[1.14] tracking-[-0.03em] text-[var(--color-ivory)]"
+                  className="mt-10 font-[family-name:var(--font-heading)] text-[clamp(2.55rem,4.4vw,4.6rem)] leading-[1.14] tracking-[-0.03em] text-[var(--color-deep-brown)]"
                   style={{
                     textShadow:
-                      '0 0 1px rgba(255,248,242,0.55), 0 8px 24px rgba(0,0,0,0.12)',
+                      '0 1px 0 rgba(246,223,192,0.28), 0 8px 24px rgba(42,30,26,0.08)',
                   }}
                 >
                   “{quote}”
                 </blockquote>
 
                 <div className="mt-10 flex items-center gap-3">
-                  <span className="h-px w-10 bg-[rgba(136,159,176,0.26)]" />
-                  <span className="h-[1px] w-4 bg-[rgba(216,195,168,0.22)]" />
-                  <span className="text-[11px] uppercase tracking-[0.28em] text-[rgba(136,159,176,0.88)]">
+                  <span className="h-px w-10 bg-[rgba(114,142,165,0.3)]" />
+                  <span className="h-[1px] w-4 bg-[rgba(190,75,3,0.18)]" />
+                  <span className="text-[11px] uppercase tracking-[0.28em] text-[rgba(114,142,165,0.92)]">
                     {reference}
                   </span>
                 </div>
 
                 {note ? (
-                  <p className="mt-6 max-w-2xl text-base text-[rgba(234,223,211,0.76)]">{note}</p>
+                  <p className="mt-6 max-w-2xl text-base text-[rgba(140,122,107,0.86)]">{note}</p>
                 ) : null}
               </div>
             </div>

@@ -26,7 +26,7 @@ export function Gifts({ gifts = eventContent.gifts }: GiftsProps) {
   return (
     <section className="px-6 py-6 md:px-10 md:py-8">
       <div className="mx-auto max-w-6xl">
-        <div className="mx-auto w-full overflow-hidden rounded-[2.6rem] border border-[rgba(246,223,192,0.12)] bg-[radial-gradient(circle_at_top_right,rgba(166,187,200,0.22),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(219,100,0,0.1),transparent_28%),linear-gradient(180deg,#201612,#140f0d)] px-6 py-10 text-white shadow-[var(--shadow-panel)] md:px-10 md:py-12">
+        <div className="mx-auto w-full overflow-hidden rounded-[2.6rem] border border-[rgba(246,223,192,0.12)] bg-[radial-gradient(circle_at_top_right,rgba(166,187,200,0.22),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(219,100,0,0.08),transparent_28%),linear-gradient(180deg,#312723,#251d1a)] px-6 py-10 text-white shadow-[var(--shadow-panel)] md:px-10 md:py-12">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start lg:gap-10">
             <div className="mx-auto max-w-3xl text-center">
               <p className="section-label text-[rgba(182,204,219,0.86)]">{gifts.eyebrow}</p>
@@ -42,7 +42,7 @@ export function Gifts({ gifts = eventContent.gifts }: GiftsProps) {
 
             <div className="relative mx-auto hidden h-[15rem] w-[12rem] overflow-hidden rounded-[1.6rem] bg-black/40 lg:block">
               <Image
-                alt="Andrés y Paulina en un retrato editorial"
+                alt="Andrés y Abigail en un retrato editorial"
                 className="object-cover"
                 fill
                 sizes="192px"

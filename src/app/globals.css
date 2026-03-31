@@ -12,7 +12,7 @@
   --color-olive: #98a38d;
   --color-taupe: #8c7a6b;
 
-  --bg-deep: var(--color-espresso);
+  --bg-deep: var(--color-soft-cream);
   --bg-shadow: var(--color-deep-brown);
   --bg-canvas: var(--color-ivory);
   --surface-paper: var(--color-ivory);
@@ -58,11 +58,11 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 84% 14%, rgba(166, 187, 200, 0.2), transparent 18%),
-    radial-gradient(circle at 12% 0%, rgba(219, 100, 0, 0.14), transparent 22%),
-    radial-gradient(circle at 100% 18%, rgba(190, 75, 3, 0.16), transparent 18%),
-    radial-gradient(circle at 24% 78%, rgba(114, 142, 165, 0.1), transparent 18%),
-    linear-gradient(180deg, #64463b 0%, #382723 36%, var(--bg-shadow) 100%);
+    radial-gradient(circle at 84% 14%, rgba(166, 187, 200, 0.28), transparent 18%),
+    radial-gradient(circle at 8% 6%, rgba(246, 223, 192, 0.36), transparent 24%),
+    radial-gradient(circle at 100% 18%, rgba(190, 75, 3, 0.08), transparent 16%),
+    radial-gradient(circle at 22% 78%, rgba(114, 142, 165, 0.16), transparent 18%),
+    linear-gradient(180deg, #f3e8d9 0%, #efe4d5 42%, #eadfce 100%);
   color: var(--text-secondary);
   font-family: var(--font-body), sans-serif;
 }
@@ -130,7 +130,7 @@ select {
 }
 
 .section-label {
-  color: color-mix(in srgb, var(--dusty-blue-soft) 72%, white);
+  color: color-mix(in srgb, var(--dusty-blue) 76%, white);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.24em;
@@ -148,10 +148,10 @@ select {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 84% 12%, rgba(114, 142, 165, 0.14), transparent 16%),
-    radial-gradient(circle at 10% 0%, rgba(219, 100, 0, 0.1), transparent 18%),
-    radial-gradient(circle at 100% 15%, rgba(190, 75, 3, 0.08), transparent 16%),
-    linear-gradient(90deg, transparent 0, rgba(255, 247, 240, 0.035) 1px, transparent 1px);
+    radial-gradient(circle at 84% 12%, rgba(114, 142, 165, 0.18), transparent 16%),
+    radial-gradient(circle at 10% 0%, rgba(246, 223, 192, 0.16), transparent 18%),
+    radial-gradient(circle at 100% 15%, rgba(219, 100, 0, 0.05), transparent 16%),
+    linear-gradient(90deg, transparent 0, rgba(114, 142, 165, 0.035) 1px, transparent 1px);
   background-size: auto, auto, auto, 180px 100%;
 }
 
@@ -161,15 +161,16 @@ select {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 14% 62%, rgba(114, 142, 165, 0.08), transparent 20%),
-    radial-gradient(circle at 50% 20%, rgba(246, 223, 192, 0.05), transparent 28%),
-    radial-gradient(circle at 50% 85%, rgba(190, 75, 3, 0.05), transparent 20%);
+    radial-gradient(circle at 14% 62%, rgba(114, 142, 165, 0.12), transparent 20%),
+    radial-gradient(circle at 50% 20%, rgba(246, 223, 192, 0.08), transparent 28%),
+    radial-gradient(circle at 50% 85%, rgba(190, 75, 3, 0.028), transparent 20%);
 }
 
 .paper-panel {
   border: 1px solid var(--line-soft);
   background:
-    radial-gradient(circle at top right, rgba(166, 187, 200, 0.12), transparent 26%),
+    radial-gradient(circle at top right, rgba(166, 187, 200, 0.18), transparent 26%),
+    radial-gradient(circle at bottom left, rgba(114, 142, 165, 0.05), transparent 24%),
     linear-gradient(180deg, rgba(248, 238, 224, 0.98), rgba(241, 231, 216, 0.94));
   box-shadow: var(--shadow-soft);
 }
@@ -180,8 +181,8 @@ select {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(114, 142, 165, 0.24),
-    rgba(219, 100, 0, 0.2),
+    rgba(114, 142, 165, 0.3),
+    rgba(219, 100, 0, 0.14),
     transparent
   );
 }
@@ -217,9 +218,9 @@ select {
   overflow: hidden;
   border: 1px solid rgba(255, 247, 240, 0.08);
   background:
-    radial-gradient(circle at top left, rgba(166, 187, 200, 0.14), transparent 22%),
-    radial-gradient(circle at top right, rgba(219, 100, 0, 0.08), transparent 22%),
-    radial-gradient(circle at bottom left, rgba(190, 75, 3, 0.05), transparent 20%),
+    radial-gradient(circle at top left, rgba(166, 187, 200, 0.18), transparent 22%),
+    radial-gradient(circle at top right, rgba(114, 142, 165, 0.08), transparent 22%),
+    radial-gradient(circle at bottom left, rgba(219, 100, 0, 0.04), transparent 20%),
     linear-gradient(180deg, rgba(248, 238, 224, 0.97), rgba(241, 231, 216, 0.93));
   box-shadow: var(--shadow-panel);
 }

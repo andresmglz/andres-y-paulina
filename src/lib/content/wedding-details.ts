@@ -143,15 +143,15 @@ type WeddingDetails = {
 export const weddingDetails: WeddingDetails = {
   couple: {
     partnerOne: 'Andrés Moreno Gonzalez',
-    partnerTwo: 'Paulina Abigail Ríos Pérez',
-    displayName: 'Andrés & Paulina',
+    partnerTwo: 'Abigail Ríos Pérez',
+    displayName: 'Andrés & Abigail',
   },
   event: {
     dateLabel: '22 de noviembre del 2026',
     cityLabel: 'Zapopan, Jalisco',
     ceremonyTime: '5:00 PM',
     receptionTime: '4:00 PM',
-    hashtag: '#AndresAndPauForever',
+    hashtag: '#AndresAndAbbyForever',
   },
   hero: {
     title: 'Nos casamos',
@@ -229,25 +229,25 @@ export const weddingDetails: WeddingDetails = {
     items: [
       {
         src: '/images/couple/gallery-01.jpg',
-        alt: 'Andrés y Paulina caminando juntos',
+        alt: 'Andrés y Abigail caminando juntos',
         title: 'Antesala',
         description: 'Una imagen tranquila para abrir el ritmo visual de la página.',
       },
       {
         src: '/images/couple/gallery-02.jpg',
-        alt: 'Andrés y Paulina en un momento de complicidad',
+        alt: 'Andrés y Abigail en un momento de complicidad',
         title: 'Complicidad',
         description: 'Una pausa más cercana para equilibrar la narrativa y la celebración.',
       },
       {
         src: '/images/couple/gallery-03.jpg',
-        alt: 'Andrés y Paulina compartiendo una mirada',
+        alt: 'Andrés y Abigail compartiendo una mirada',
         title: 'Calma',
         description: 'Un momento sereno que sostiene el tono íntimo de la landing.',
       },
       {
         src: '/images/couple/gallery-04.jpg',
-        alt: 'Andrés y Paulina celebrando su historia',
+        alt: 'Andrés y Abigail celebrando su historia',
         title: 'Celebración',
         description: 'Un cierre visual más luminoso antes de entrar a los bloques prácticos.',
       },
