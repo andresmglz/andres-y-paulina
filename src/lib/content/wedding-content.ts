@@ -19,11 +19,11 @@ export const eventContent = {
     },
     image: {
       src: weddingDetails.assets.heroPortrait,
-      alt: 'Retrato de Andrés y Paulina',
+      alt: 'Retrato de Andrés y Abigail',
     },
     detailImage: {
       src: weddingDetails.assets.detailHands,
-      alt: 'Detalle de las manos de Andrés y Paulina',
+      alt: 'Detalle de las manos de Andrés y Abigail',
     },
   },
   saveTheDate: {
@@ -51,7 +51,7 @@ export const eventContent = {
     description: weddingDetails.story.description,
     image: {
       src: weddingDetails.assets.storyLandscape,
-      alt: 'Andrés y Paulina juntos en una fotografía horizontal',
+      alt: 'Andrés y Abigail juntos en una fotografía horizontal',
     },
     moments: weddingDetails.story.moments,
   },

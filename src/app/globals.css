@@ -1,18 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --bg-deep: #3f2d26;
-  --bg-shadow: #2e211c;
-  --bg-canvas: #f5eee6;
-  --surface-paper: #fbf7f1;
-  --surface-soft: #efe3d6;
-  --surface-tint: #e6d2c2;
-  --terracotta: #c86543;
-  --terracotta-dark: #9f4d2e;
-  --terracotta-soft: #d9a28b;
-  --olive-muted: #70755f;
-  --text-primary: #2d2622;
-  --text-secondary: #6f6258;
+  --color-espresso: #1f1714;
+  --color-deep-brown: #2a1e1a;
+  --color-ivory: #f6dfc0;
+  --color-soft-cream: #f1e7d8;
+  --color-terracotta: #be4b03;
+  --color-terracotta-soft: #db6400;
+  --color-dusty-blue: #728ea5;
+  --color-dusty-blue-soft: #a6bbc8;
+  --color-olive: #98a38d;
+  --color-taupe: #8c7a6b;
+
+  --bg-deep: var(--color-soft-cream);
+  --bg-shadow: var(--color-deep-brown);
+  --bg-canvas: var(--color-ivory);
+  --surface-paper: var(--color-ivory);
+  --surface-soft: var(--color-soft-cream);
+  --surface-tint: #eadfce;
+  --terracotta: var(--color-terracotta);
+  --terracotta-dark: var(--color-terracotta-soft);
+  --terracotta-soft: #e18a58;
+  --dusty-blue: var(--color-dusty-blue);
+  --dusty-blue-soft: var(--color-dusty-blue-soft);
+  --olive-muted: var(--color-olive);
+  --gold-soft: #d8c3a8;
+  --text-primary: var(--color-deep-brown);
+  --text-secondary: var(--color-taupe);
   --line-soft: rgba(45, 38, 34, 0.12);
   --line-strong: rgba(255, 247, 240, 0.16);
   --hero-overlay: rgba(0, 0, 0, 0.35);
@@ -24,7 +38,6 @@
   --color-line: var(--line-soft);
   --color-ink: var(--text-primary);
   --color-muted: var(--text-secondary);
-  --color-terracotta: var(--terracotta);
   --color-hero-overlay: var(--hero-overlay);
 }
 
@@ -45,9 +58,11 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 10% 0%, rgba(217, 162, 139, 0.16), transparent 24%),
-    radial-gradient(circle at 100% 15%, rgba(190, 117, 82, 0.16), transparent 18%),
-    linear-gradient(180deg, #61483d 0%, #3a2a24 36%, var(--bg-shadow) 100%);
+    radial-gradient(circle at 84% 14%, rgba(166, 187, 200, 0.28), transparent 18%),
+    radial-gradient(circle at 8% 6%, rgba(246, 223, 192, 0.36), transparent 24%),
+    radial-gradient(circle at 100% 18%, rgba(190, 75, 3, 0.08), transparent 16%),
+    radial-gradient(circle at 22% 78%, rgba(114, 142, 165, 0.16), transparent 18%),
+    linear-gradient(180deg, #f3e8d9 0%, #efe4d5 42%, #eadfce 100%);
   color: var(--text-secondary);
   font-family: var(--font-body), sans-serif;
 }
@@ -55,7 +70,6 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--text-primary);
   font-family: var(--font-heading), serif;
   font-weight: 500;
   letter-spacing: -0.03em;
@@ -88,7 +102,7 @@ select {
 }
 
 ::selection {
-  background: rgba(200, 101, 67, 0.22);
+  background: rgba(190, 75, 3, 0.22);
 }
 
 @keyframes fade-up {
@@ -116,7 +130,7 @@ select {
 }
 
 .section-label {
-  color: var(--terracotta-soft);
+  color: color-mix(in srgb, var(--dusty-blue) 76%, white);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.24em;
@@ -134,10 +148,11 @@ select {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 10% 0%, rgba(217, 162, 139, 0.12), transparent 18%),
-    radial-gradient(circle at 100% 15%, rgba(217, 162, 139, 0.09), transparent 16%),
-    linear-gradient(90deg, transparent 0, rgba(255, 247, 240, 0.035) 1px, transparent 1px);
-  background-size: auto, auto, 180px 100%;
+    radial-gradient(circle at 84% 12%, rgba(114, 142, 165, 0.18), transparent 16%),
+    radial-gradient(circle at 10% 0%, rgba(246, 223, 192, 0.16), transparent 18%),
+    radial-gradient(circle at 100% 15%, rgba(219, 100, 0, 0.05), transparent 16%),
+    linear-gradient(90deg, transparent 0, rgba(114, 142, 165, 0.035) 1px, transparent 1px);
+  background-size: auto, auto, auto, 180px 100%;
 }
 
 .page-shell::after {
@@ -146,20 +161,56 @@ select {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 50% 20%, rgba(255, 247, 240, 0.04), transparent 28%),
-    radial-gradient(circle at 50% 85%, rgba(217, 162, 139, 0.06), transparent 20%);
+    radial-gradient(circle at 14% 62%, rgba(114, 142, 165, 0.12), transparent 20%),
+    radial-gradient(circle at 50% 20%, rgba(246, 223, 192, 0.08), transparent 28%),
+    radial-gradient(circle at 50% 85%, rgba(190, 75, 3, 0.028), transparent 20%);
 }
 
 .paper-panel {
   border: 1px solid var(--line-soft);
-  background: linear-gradient(180deg, rgba(251, 247, 241, 0.98), rgba(242, 233, 223, 0.94));
+  background:
+    radial-gradient(circle at top right, rgba(166, 187, 200, 0.18), transparent 26%),
+    radial-gradient(circle at bottom left, rgba(114, 142, 165, 0.05), transparent 24%),
+    linear-gradient(180deg, rgba(248, 238, 224, 0.98), rgba(241, 231, 216, 0.94));
   box-shadow: var(--shadow-soft);
 }
 
 .paper-divider {
   height: 1px;
   width: 100%;
-  background: linear-gradient(90deg, transparent, rgba(200, 101, 67, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(114, 142, 165, 0.3),
+    rgba(219, 100, 0, 0.14),
+    transparent
+  );
+}
+
+.editorial-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.editorial-divider::before,
+.editorial-divider::after {
+  content: '';
+  height: 1px;
+  width: 3rem;
+  background: linear-gradient(90deg, transparent, rgba(166, 187, 200, 0.52));
+}
+
+.editorial-divider::after {
+  background: linear-gradient(90deg, rgba(246, 223, 192, 0.34), transparent);
+}
+
+.paper-texture {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(114, 142, 165, 0.04) 1px, transparent 0),
+    linear-gradient(180deg, rgba(248, 238, 224, 0.98), rgba(241, 231, 216, 0.94));
+  background-size: 22px 22px, auto;
 }
 
 .section-stage {
@@ -167,8 +218,9 @@ select {
   overflow: hidden;
   border: 1px solid rgba(255, 247, 240, 0.08);
   background:
-    radial-gradient(circle at top right, rgba(217, 162, 139, 0.09), transparent 22%),
-    radial-gradient(circle at bottom left, rgba(200, 101, 67, 0.05), transparent 20%),
-    linear-gradient(180deg, rgba(251, 247, 241, 0.96), rgba(244, 236, 227, 0.92));
+    radial-gradient(circle at top left, rgba(166, 187, 200, 0.18), transparent 22%),
+    radial-gradient(circle at top right, rgba(114, 142, 165, 0.08), transparent 22%),
+    radial-gradient(circle at bottom left, rgba(219, 100, 0, 0.04), transparent 20%),
+    linear-gradient(180deg, rgba(248, 238, 224, 0.97), rgba(241, 231, 216, 0.93));
   box-shadow: var(--shadow-panel);
 }
