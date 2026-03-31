@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 import { eventContent } from '@/lib/content/wedding-content';
 
@@ -74,35 +75,93 @@ export function Countdown({
   ] as const;
 
   return (
-    <section className="relative z-10 px-6 py-6 md:px-10 md:py-8">
-      <div className="mx-auto max-w-6xl">
-        <div className="section-stage rounded-[2.4rem] px-6 py-8 md:px-8 md:py-9">
-          <div className="grid gap-7 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-            <div className="text-center lg:text-left">
-              <p className="section-label text-[var(--terracotta)]">{eyebrow}</p>
-              <h2 className="mt-3 text-[clamp(2rem,3vw,2.6rem)] leading-[0.95] text-[var(--text-primary)]">{title}</h2>
-              <p className="mt-4 max-w-xl text-sm text-[var(--text-secondary)] md:text-base">{note}</p>
+    <section className="relative bg-[var(--color-espresso)] px-5 py-16 text-[var(--color-ivory)] sm:px-8 sm:py-20">
+      <div className="mx-auto max-w-5xl">
+        <div className="relative overflow-hidden rounded-[32px] border border-[rgba(244,237,230,0.12)] bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] px-6 py-10 shadow-[0_20px_50px_rgba(0,0,0,0.18)] backdrop-blur-sm sm:px-10 sm:py-14">
+          <div className="pointer-events-none absolute inset-[10px] rounded-[24px] border border-[rgba(244,237,230,0.08)]" />
+          <div className="pointer-events-none absolute inset-[20px] rounded-[20px] border border-[rgba(191,93,57,0.08)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(201,120,88,0.1),transparent_28%),radial-gradient(circle_at_84%_22%,rgba(111,143,166,0.18),transparent_26%),radial-gradient(circle_at_bottom_left,rgba(111,143,166,0.08),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))]" />
+          <div className="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:radial-gradient(circle_at_1px_1px,rgba(244,237,230,0.8)_1px,transparent_0)] [background-size:24px_24px]" />
+          <div className="pointer-events-none absolute -bottom-8 left-6 h-24 w-32 rounded-full bg-[rgba(201,120,88,0.08)] blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-8 right-6 h-24 w-32 rounded-full bg-[rgba(111,143,166,0.08)] blur-3xl" />
+          <div className="pointer-events-none absolute left-4 top-4 hidden text-[rgba(216,195,168,0.72)] sm:block">
+            <Image alt="" aria-hidden="true" className="h-[4.5rem] w-[4.5rem]" height={72} src="/ornaments/countdown-corner.svg" width={72} />
+          </div>
+          <div className="pointer-events-none absolute right-4 top-4 hidden text-[rgba(216,195,168,0.72)] [transform:scaleX(-1)] sm:block">
+            <Image alt="" aria-hidden="true" className="h-[4.5rem] w-[4.5rem]" height={72} src="/ornaments/countdown-corner.svg" width={72} />
+          </div>
+
+          <div className="relative text-center">
+            <p className="text-[11px] uppercase tracking-[0.32em] text-[rgba(210,214,221,0.78)]">
+              {eyebrow}
+            </p>
+
+            <div className="mt-4 flex items-center justify-center">
+              <div className="text-[rgba(216,195,168,0.78)]">
+                <Image alt="" aria-hidden="true" className="h-8 w-[10.5rem]" height={32} src="/ornaments/countdown-flourish.svg" width={168} />
+              </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-              {metrics.map((metric) => (
+            <h2
+              className="mt-6 text-[1.95rem] leading-tight text-[#f0ddd0] sm:text-[2.8rem]"
+              style={{
+                textShadow:
+                  '0 0 1px rgba(255,248,242,0.7), 0 0 18px rgba(235,193,167,0.12), 0 10px 26px rgba(0,0,0,0.14)',
+              }}
+            >
+              {title}
+            </h2>
+
+            <p
+              className="mt-4 text-[11px] uppercase tracking-[0.24em] text-[#eadfd3]/88 sm:text-[12px]"
+              style={{ textShadow: '0 0 14px rgba(255,244,236,0.08)' }}
+            >
+              {note}
+            </p>
+          </div>
+
+          <div className="relative mt-10 overflow-hidden rounded-[26px] border border-[rgba(244,237,230,0.09)] bg-[linear-gradient(180deg,rgba(255,255,255,0.045),rgba(111,143,166,0.065))] shadow-[inset_0_1px_0_rgba(244,237,230,0.06)]">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(244,237,230,0.06),transparent_36%),linear-gradient(90deg,rgba(191,93,57,0.04),transparent_32%,rgba(111,143,166,0.05))]" />
+            <div className="pointer-events-none absolute inset-x-0 top-1/2 hidden -translate-y-1/2 justify-center sm:flex">
+              <div className="text-[rgba(216,195,168,0.72)]">
+                <Image alt="" aria-hidden="true" className="h-8 w-[10.5rem]" height={32} src="/ornaments/countdown-flourish.svg" width={168} />
+              </div>
+            </div>
+            <div className="relative grid grid-cols-2 sm:grid-cols-4">
+              {metrics.map((item, index) => (
                 <div
-                  className="rounded-[1.2rem] border border-[rgba(200,101,67,0.1)] bg-[rgba(255,251,247,0.52)] px-4 py-4 text-center"
-                  key={metric.label}
+                  className={[
+                    'flex min-h-[9.5rem] flex-col items-center justify-center px-4 py-8 text-center sm:min-h-[11rem] sm:px-6 sm:py-10',
+                    index < 2 ? 'border-b border-[rgba(244,237,230,0.08)] sm:border-b-0' : '',
+                    index !== metrics.length - 1 ? 'sm:border-r sm:border-[rgba(136,159,176,0.18)]' : '',
+                  ].join(' ')}
+                  key={item.label}
                 >
-                  <p className="font-[family-name:var(--font-heading)] text-[clamp(2.1rem,4vw,3rem)] leading-none text-[var(--terracotta-dark)]">
-                    {metric.value}
-                  </p>
-                  <p className="mt-3 text-[10px] uppercase tracking-[0.28em] text-[var(--text-secondary)]">
-                    {metric.label}
-                  </p>
+                  <span
+                    className="font-[family-name:var(--font-heading)] text-[4.2rem] leading-none tracking-[-0.05em] text-[#f0ddd0] sm:text-[5.6rem]"
+                    style={{
+                      textShadow:
+                        '0 0 1px rgba(255,248,242,0.76), 0 0 18px rgba(235,193,167,0.12), 0 12px 30px rgba(0,0,0,0.16)',
+                    }}
+                  >
+                    {item.value}
+                  </span>
+                  <span className="mt-3 text-[10px] uppercase tracking-[0.28em] text-[rgba(136,159,176,0.92)] sm:text-[11px]">
+                    {item.label}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
-          <div className="paper-divider mt-6" />
-          <p className="mt-5 text-center text-[11px] uppercase tracking-[0.28em] text-[var(--text-secondary)]">
-            22 noviembre 2026 · La Victoria Eventos · Zapopan, Jalisco
+
+          <div className="mt-8 flex items-center justify-center gap-3">
+            <div className="text-[rgba(216,195,168,0.78)]">
+              <Image alt="" aria-hidden="true" className="h-8 w-[10.5rem]" height={32} src="/ornaments/countdown-flourish.svg" width={168} />
+            </div>
+          </div>
+
+          <p className="mt-6 text-center text-sm tracking-[0.08em] text-[rgba(136,159,176,0.76)] sm:text-[15px]">
+            La Victoria Eventos · Zapopan, Jalisco
           </p>
         </div>
       </div>

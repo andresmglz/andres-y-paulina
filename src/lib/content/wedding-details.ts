@@ -164,8 +164,8 @@ export const weddingDetails: WeddingDetails = {
     badge: 'Guarda la fecha',
   },
   assets: {
-    heroPortrait: '/images/couple/hero-portrait.jpg',
-    storyLandscape: '/images/couple/story-landscape.jpg',
+    heroPortrait: '/images/couple/hero-portrait-v2.jpg',
+    storyLandscape: '/images/couple/story-landscape-v2.jpg',
     detailHands: '/images/couple/detail-hands.jpg',
   },
   ceremony: {
@@ -211,7 +211,7 @@ export const weddingDetails: WeddingDetails = {
   },
   countdown: {
     eyebrow: 'Cuenta regresiva',
-    title: 'Cuenta regresiva para el gran día',
+    title: 'Cada día nos acerca más',
     note: '22 de noviembre del 2026 · 5:00 PM',
     targetDateTime: '2026-11-22T17:00:00-06:00',
   },

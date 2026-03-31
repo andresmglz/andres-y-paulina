@@ -26,10 +26,10 @@ export function Gifts({ gifts = eventContent.gifts }: GiftsProps) {
   return (
     <section className="px-6 py-6 md:px-10 md:py-8">
       <div className="mx-auto max-w-6xl">
-        <div className="mx-auto w-full overflow-hidden rounded-[2.6rem] border border-[rgba(255,247,240,0.12)] bg-[linear-gradient(180deg,#221713,#130d0b)] px-6 py-10 text-white shadow-[var(--shadow-panel)] md:px-10 md:py-12">
+        <div className="mx-auto w-full overflow-hidden rounded-[2.6rem] border border-[rgba(246,223,192,0.12)] bg-[radial-gradient(circle_at_top_right,rgba(166,187,200,0.22),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(219,100,0,0.1),transparent_28%),linear-gradient(180deg,#201612,#140f0d)] px-6 py-10 text-white shadow-[var(--shadow-panel)] md:px-10 md:py-12">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start lg:gap-10">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="section-label text-[var(--terracotta-soft)]">{gifts.eyebrow}</p>
+              <p className="section-label text-[rgba(182,204,219,0.86)]">{gifts.eyebrow}</p>
               <h2 className="mt-4 text-white">{gifts.title}</h2>
               <p className="mx-auto mt-8 max-w-3xl text-lg leading-9 text-white/78 md:text-[1.15rem]">
                 {gifts.description}
@@ -43,7 +43,7 @@ export function Gifts({ gifts = eventContent.gifts }: GiftsProps) {
             <div className="relative mx-auto hidden h-[15rem] w-[12rem] overflow-hidden rounded-[1.6rem] bg-black/40 lg:block">
               <Image
                 alt="Andrés y Paulina en un retrato editorial"
-                className="object-cover grayscale"
+                className="object-cover"
                 fill
                 sizes="192px"
                 src="/images/couple/gallery-02.jpg"
@@ -55,10 +55,10 @@ export function Gifts({ gifts = eventContent.gifts }: GiftsProps) {
             <div className="grid gap-4 md:grid-cols-3">
               {gifts.options.map((gift) => (
                 <div
-                  className="rounded-[1.6rem] border border-white/10 bg-white/5 px-5 py-5 text-left"
+                  className="rounded-[1.6rem] border border-[rgba(182,204,219,0.14)] bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(111,143,166,0.04))] px-5 py-5 text-left"
                   key={gift.label}
                 >
-                  <p className="text-[11px] uppercase tracking-[0.28em] text-[var(--terracotta-soft)]">
+                  <p className="text-[11px] uppercase tracking-[0.28em] text-[rgba(166,187,200,0.92)]">
                     {gift.status}
                   </p>
                   <h3 className="mt-3 font-[family-name:var(--font-heading)] text-[1.9rem] leading-[0.95] text-white">
@@ -76,7 +76,7 @@ export function Gifts({ gifts = eventContent.gifts }: GiftsProps) {
               ))}
             </div>
 
-            <div className="rounded-[1.8rem] border border-white/10 bg-[rgba(255,255,255,0.05)] px-5 py-5">
+            <div className="rounded-[1.8rem] border border-[rgba(166,187,200,0.18)] bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(114,142,165,0.1))] px-5 py-5">
               <div className="grid gap-5 md:grid-cols-[120px_1fr] md:items-center">
                 <div className="mx-auto flex h-28 w-28 items-center justify-center border border-white/16 bg-[var(--surface-paper)] px-3 text-center text-xs font-semibold uppercase tracking-[0.22em] text-[var(--text-primary)] shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
                   QR
@@ -84,7 +84,7 @@ export function Gifts({ gifts = eventContent.gifts }: GiftsProps) {
                   próximamente
                 </div>
                 <div className="text-center md:text-left">
-                  <p className="text-[11px] uppercase tracking-[0.28em] text-[var(--terracotta-soft)]">
+                  <p className="text-[11px] uppercase tracking-[0.28em] text-[rgba(182,204,219,0.86)]">
                     Acceso rápido
                   </p>
                   <p className="mt-3 text-base leading-8 text-white/74">
