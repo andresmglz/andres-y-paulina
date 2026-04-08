@@ -26,8 +26,8 @@ export function Section({
   headerClassName,
 }: SectionProps) {
   return (
-    <section className={clsx('px-6 py-8 md:px-10 md:py-12', className)} id={id}>
-      <div className={clsx('mx-auto max-w-6xl', viewportClassName)}>
+    <section className={clsx('flex min-h-screen min-h-[100dvh] items-center px-6 py-8 md:px-10 md:py-12', className)} id={id}>
+      <div className={clsx('mx-auto w-full max-w-6xl', viewportClassName)}>
         <div
           className={clsx(
             surface === 'stage' ? 'section-stage rounded-[2.75rem] px-6 py-8 md:px-10 md:py-10' : 'w-full',
