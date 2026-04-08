@@ -164,8 +164,8 @@ export const weddingDetails: WeddingDetails = {
     badge: 'Guarda la fecha',
   },
   assets: {
-    heroPortrait: '/images/couple/hero-portrait-v2.jpg',
-    storyLandscape: '/images/couple/story-landscape-v2.jpg',
+    heroPortrait: '/images/couple/hero-portrait.jpg',
+    storyLandscape: '/images/couple/story-landscape.jpg',
     detailHands: '/images/couple/detail-hands.jpg',
   },
   ceremony: {

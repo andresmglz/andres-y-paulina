@@ -1,9 +1,11 @@
+import Image from 'next/image';
+
 import { eventContent } from '@/lib/content/wedding-content';
 
 export function Footer() {
   return (
     <footer className="px-6 pb-16 pt-10 md:px-10 md:pb-20 md:pt-12">
-      <div className="mx-auto flex min-h-[48svh] max-w-6xl items-center justify-center">
+      <div className="mx-auto flex min-h-screen min-h-[100dvh] max-w-6xl items-center justify-center">
         <div className="section-stage w-full max-w-5xl rounded-[2rem] px-6 py-12 text-center shadow-[0_18px_42px_rgba(87,67,57,0.08)] md:px-12 md:py-16">
           <div className="pointer-events-none absolute inset-[14px] rounded-[1.5rem] border border-[rgba(114,142,165,0.1)]" />
           <div className="paper-divider mx-auto max-w-xs opacity-80" />
@@ -15,10 +17,15 @@ export function Footer() {
               {eventContent.footer.note}
             </p>
           ) : null}
-          <div className="mt-8 flex items-center justify-center gap-3">
-            <span className="h-px w-10 bg-[rgba(114,142,165,0.26)]" />
-            <span className="h-1.5 w-1.5 rounded-full bg-[var(--terracotta)]" />
-            <span className="h-px w-10 bg-[rgba(219,100,0,0.22)]" />
+          <div className="mt-8 flex items-center justify-center">
+            <Image
+              alt=""
+              aria-hidden="true"
+              className="h-6 w-auto opacity-[0.58]"
+              height={24}
+              src="/ornaments/divider2.png"
+              width={180}
+            />
           </div>
           <p className="mt-6 text-[11px] uppercase tracking-[0.32em] text-[var(--dusty-blue)]">
             22 noviembre 2026 · Zapopan, Jalisco

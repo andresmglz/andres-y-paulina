@@ -10,6 +10,7 @@ type ButtonProps = {
     | 'heroPrimary'
     | 'heroSecondary'
     | 'heroEditorial'
+    | 'giftPanel'
     | 'heroLight'
     | 'heroStrokeLight'
     | 'floating';
@@ -36,6 +37,9 @@ export function Button({ href, children, variant = 'primary' }: ButtonProps) {
           : '',
         variant === 'heroEditorial'
           ? 'border border-[rgba(114,142,165,0.28)] bg-[rgba(248,238,224,0.82)] px-6 py-2.5 text-[var(--dusty-blue)] hover:bg-[var(--dusty-blue)] hover:text-white'
+          : '',
+        variant === 'giftPanel'
+          ? 'border border-[rgba(246,223,192,0.42)] bg-[rgba(246,223,192,0.92)] px-6 py-2.5 text-[var(--color-deep-brown)] shadow-[0_12px_28px_rgba(42,30,26,0.14)] hover:-translate-y-0.5 hover:bg-[rgba(255,248,240,0.98)]'
           : '',
         variant === 'heroLight'
           ? 'bg-[rgba(255,255,255,0.94)] px-8 py-3 uppercase tracking-[0.2em] text-[11px] text-[var(--text-primary)] shadow-[0_16px_40px_rgba(0,0,0,0.18)] hover:-translate-y-0.5 hover:bg-white'
